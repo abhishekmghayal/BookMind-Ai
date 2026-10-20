@@ -1,0 +1,36 @@
+
+# LangChain and LLM providers
+langchain
+langchain-core
+langchain-openai
+langchain-mistralai
+langchain-text-splitters
+
+# ChromaDB vector storage
+chromadb
+langchain-chroma
+
+# Local embedding models
+langchain-huggingface
+sentence-transformers
+
+# Document processing
+pypdf
+python-docx
+beautifulsoup4
+lxml
+markdown
+
+# Frontend and backend
+streamlit
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Configuration and utilities
+python-dotenv
+tiktoken
+httpx
+
+# Testing
+pytest

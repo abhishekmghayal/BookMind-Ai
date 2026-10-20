@@ -1,0 +1,71 @@
+SIMPLE NOTES: CORRELATION AND COVARIANCE IN STATISTICS
+
+1. CORRELATION
+
+Definition:
+Correlation measures the strength and direction of the relationship between two variables.
+
+Example:
+As study hours increase, exam marks may also increase.
+
+Types of Correlation:
+- Positive correlation: Both variables move in the same direction. Example: study hours and marks.
+- Negative correlation: One variable increases while the other decreases. Example: product price and demand, in many situations.
+- Zero correlation: No linear relationship between the variables.
+
+Correlation Coefficient:
+Pearson's correlation coefficient is represented by r.
+
+Range:
+-1 <= r <= +1
+
+Meaning:
+- r = +1: Perfect positive correlation.
+- r = 0: No linear correlation.
+- r = -1: Perfect negative correlation.
+
+Important:
+Correlation does not imply causation. Two variables being related does not prove that one causes the other.
+
+
+2. COVARIANCE
+
+Definition:
+Covariance measures whether two variables tend to move together or in opposite directions.
+
+Interpretation:
+- Positive covariance: Both variables tend to increase or decrease together.
+- Negative covariance: When one variable increases, the other tends to decrease.
+- Zero covariance: No linear co-movement is detected by covariance; nonlinear relationships may still exist.
+
+Population Covariance Formula:
+Cov(X, Y) = sum[(Xi - mean(X)) * (Yi - mean(Y))] / N
+
+Where:
+- Xi, Yi = individual observations.
+- mean(X), mean(Y) = population means.
+- N = number of observations.
+
+For a sample, the usual formula divides by n - 1 instead of n.
+
+
+3. DIFFERENCE BETWEEN CORRELATION AND COVARIANCE
+
+Correlation:
+- Measures the strength and direction of a linear relationship.
+- Always between -1 and +1.
+- Unitless.
+- Easier to compare across datasets.
+- Standardized measure.
+
+Covariance:
+- Measures the direction of co-movement.
+- Has no fixed numerical range.
+- Depends on the units of both variables.
+- Its magnitude depends on the variables' scales.
+- Unstandardized measure.
+
+
+EXAM REMINDER
+
+Both correlation and covariance describe relationships between variables. Correlation is standardized, whereas covariance depends on the variables' scales.

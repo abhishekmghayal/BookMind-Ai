@@ -1,0 +1,88 @@
+# BookMind AI — First RAG Project Requirements
+#
+# Purpose:
+# This file lists the direct Python dependencies used by the first version of
+# BookMind AI: PDF upload, text extraction, chunking, embeddings, ChromaDB,
+# MMR retrieval, Multi-Query retrieval, Groq answers, and Streamlit UI.
+#
+# Recommended Python: 3.12
+# Install: uv pip install -r requirements.txt
+#
+# This file intentionally uses version ranges rather than exact pins.
+# Once the app works, create a reproducible snapshot with:
+#   uv pip freeze > requirements-lock.txt
+
+# 1) User interface
+# Used to build the browser-based chat UI, PDF uploader, sidebar, and chat history.
+streamlit>=1.40,<2.0
+
+# 2) LangChain core
+# Base messages, prompt templates, document objects, and Runnable/retriever interfaces.
+langchain-core>=0.3.70,<2.0
+
+# 3) LangChain classic retrievers
+# Provides MultiQueryRetriever in:
+# from langchain_classic.retrievers.multi_query import MultiQueryRetriever
+langchain-classic>=1.0,<2.0
+
+# 4) LangChain community integrations
+# Your PDF loader is imported from langchain_community.document_loaders.
+# (The Chroma vector store should be imported from langchain_chroma instead.)
+langchain-community>=0.3.27,<2.0
+
+# 5) Text splitting
+# Splits extracted PDF text into overlapping chunks before embedding.
+langchain-text-splitters>=0.3.8,<2.0
+
+# 6) Hugging Face embeddings integration
+# Connects LangChain to a local sentence-transformers embedding model.
+langchain-huggingface>=0.3.0,<2.0
+
+# 7) Groq chat model integration
+# Lets ChatGroq call the configured Groq-hosted language model.
+langchain-groq>=0.3.8,<2.0
+
+# 8) Chroma integration for LangChain
+# Vector store class used by the app:
+# from langchain_chroma import Chroma
+langchain-chroma>=0.2.5,<2.0
+
+# 9) ChromaDB engine
+# Stores document embeddings and metadata, and performs vector similarity search.
+chromadb>=1.0,<2.0
+
+# 10) Sentence Transformers
+# Supplies the all-MiniLM-L6-v2 embedding model used to turn text into vectors.
+sentence-transformers>=3.4,<6.0
+
+# 11) Transformers
+# Hugging Face model/tokenizer utilities used within the embedding model stack.
+transformers>=4.49,<6.0
+
+# 12) PyTorch
+# Tensor computation backend used by many local embedding models.
+torch>=2.6,<3.0
+
+# 13) PDF text extraction
+# PyPDFLoader uses pypdf to read PDF pages and their text.
+pypdf>=5.3,<7.0
+
+# 14) Environment configuration
+# Loads GROQ_API_KEY and optional GROQ_MODEL values from your local .env file.
+python-dotenv>=1.0,<2.0
+
+# 15) HTTP client
+# Common HTTP dependency used by integrations for API/network requests.
+httpx>=0.27,<1.0
+
+# 16) Data validation
+# Used by LangChain and related packages to validate structured configuration/data.
+pydantic>=2.10,<3.0
+
+# Project notes:
+# - The current app uses a local Chroma directory named chroma_db.
+# - It uses sentence-transformers/all-MiniLM-L6-v2 (384-dimensional embeddings).
+# - Keep the same embedding model when querying an existing Chroma collection.
+# - MMR and Multi-Query are LangChain features; they are not separate pip packages.
+# - OCR is not included. Scanned/image-only PDFs need an OCR tool/workflow.
+# - GROQ_API_KEY must be set in .env; never commit .env to Git.
