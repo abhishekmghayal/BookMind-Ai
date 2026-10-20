@@ -1,6 +1,4 @@
-from pathlib import Path
-
-readme = r'''# 📚 BookMind AI — Chat With Your Books Using RAG
+# 📚 BookMind AI — Chat With Your Books Using RAG
 
 BookMind AI is a Retrieval-Augmented Generation (RAG) application that lets you upload a PDF book, retrieve relevant passages, and ask questions about its content through a Streamlit chat interface.
 
